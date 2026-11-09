@@ -245,3 +245,8 @@ body.integral-redesign {background:var(--night);color:#fff;-webkit-font-smoothin
  .integral-redesign #app .corporate-photo {background-position:right center}
  .integral-redesign #app .hero-engine .engine-poster {top:50%;transform:translateY(-50%)}
 }
+.integral-redesign #app .section.core{background:#050607;color:#f4f6f5}
+.integral-redesign #app .section.core>.wrap>.section-heading h2{color:#f4f6f5}
+.integral-redesign #app .section.core>.wrap>.section-heading h2 span{color:#f4f6f5}
+.integral-redesign #app .section.core>.wrap>.section-heading p{color:#bdc3c6}
+.integral-redesign #app .section.core .section-line,.integral-redesign #app .section.core .section-line span{color:#c8f542}
