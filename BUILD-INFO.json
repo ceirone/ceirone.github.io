@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-09T23:09:34.930Z",
+  "builtAt": "2026-11-09T23:19:29.918Z",
   "kind": "static-design-preview",
   "routes": "EN/ES, SPA fallback to index.html",
   "forms": "Demonstration only; no send or persistence",
