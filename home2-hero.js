@@ -1,0 +1,3 @@
+export function hero2({t,btn,link,home,crumb,eyebrow,title,copy,variant,actions}){
+return `<section class="h2-hero h2-sub" id="hero"><canvas id="h2-canvas" data-variant="${variant}" aria-hidden="true"></canvas><div class="h2-hero-glow" aria-hidden="true"></div>
+<div class="h2-wrap h2-hero-copy"><p class="h2-crumb"><a href="${home}">CONNEXION</a> / ${crumb}</p><p class="h2-eyebrow"><i></i>${eyebrow}</p><h1 class="h2-split">${title.replace(/<span>/g,'<em>').replace(/<\/span>/g,'</em>')}</h1><p class="h2-lead">${copy}</p><div class="h2-actions">${actions}</div></div><div class="h2-hint" aria-hidden="true"><span></span>${t('SCROLL','DESLIZA')}</div></section>`}

@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-09T23:36:45.408Z",
+  "builtAt": "2026-11-09T23:43:14.178Z",
   "kind": "static-design-preview",
   "routes": "EN/ES, SPA fallback to index.html",
   "forms": "Demonstration only; no send or persistence",
@@ -13,6 +13,7 @@
     "contrast.css",
     "dark.css",
     "editorial.css",
+    "home2-hero.js",
     "home2-landing.js",
     "home2-page.js",
     "home2.css",

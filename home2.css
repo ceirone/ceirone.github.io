@@ -108,3 +108,13 @@
 .h2-wide{width:100%}.h2-wide .h2-shot{aspect-ratio:2.2}
 .header nav a,.header .nav a,.header-nav a,.header a:not(.button){color:#e9eee8!important}
 .header nav a:hover{color:#c4ff2e!important}
+/* light interactive panels: readable dark text */
+:is(.agent-engine,.agent-script,.machine-frame,.lead-machine) :is(span,strong,small,p,b,em,li,label,div){color:#16201c!important}
+:is(.agent-engine,.agent-script,.machine-frame,.lead-machine) .micro{color:#3f6200!important}
+button:is([class*=agent],[class*=machine],[class*=scenario],[role=tab]) :is(span,strong,small,b){color:inherit}
+#app main button[style*="220, 232"] *,#app main button.active *,#app main button[aria-selected=true] *,#app main button[aria-pressed=true] *{color:#16201c!important}
+html body #app :is(.agent-engine,.agent-script,.machine-frame,.lead-machine) :is(span,strong,small,p,b,em,li,label,div,p.agent-demo-note,.micro){color:#16201c!important}
+html body #app :is(.agent-engine,.agent-script,.machine-frame,.lead-machine) .micro{color:#3f6200!important}
+html body #app button :is(strong,small,span,b){color:inherit}
+html body #app :is(.agent-script,.lead-machine) span.micro{color:#3f6200!important;-webkit-text-fill-color:#3f6200!important}
+html body #app button[aria-pressed=true] :is(span,strong,small){color:#16201c!important}
