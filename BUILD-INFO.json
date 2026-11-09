@@ -1,0 +1,21 @@
+{
+  "builtAt": "2026-11-09T20:44:41.273Z",
+  "kind": "static-design-preview",
+  "routes": "EN/ES, SPA fallback to index.html",
+  "forms": "Demonstration only; no send or persistence",
+  "files": [
+    "ai-agents-content.js",
+    "ai-agents-page.js",
+    "ai-operations.css",
+    "anatomy-page.css",
+    "anatomy-page.js",
+    "app.js",
+    "contrast.css",
+    "dark.css",
+    "editorial.css",
+    "index.html",
+    "integral-design.css",
+    "style.css",
+    "visual-system.min.css"
+  ]
+}

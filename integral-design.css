@@ -1,0 +1,247 @@
+/* Integral Connexion reference system. Functional layout and animation hooks remain owned by their original modules. */
+:root {
+ --night:#090b0d;--paper:#fff;--ink:#101315;--green:#b6ff12;--deep:#243517;
+ --gray:#73777a;--muted:#b9bdc0;--line:#ffffff24;
+ --cx-light:#f2f3f3;--cx-border:#dfe1e2;--cx-radius:12px;
+ --cx-space:clamp(64px,7vw,104px);--cx-ease:cubic-bezier(.23,1,.32,1);
+ --type-display:clamp(44px,4.6vw,68px);--type-section:clamp(32px,3.25vw,48px);
+ --type-card:clamp(23px,2vw,28px);--type-body:16px;--type-lead:20px;
+}
+body.integral-redesign {background:var(--night);color:#fff;-webkit-font-smoothing:antialiased}
+.integral-redesign #app .wrap {width:min(1320px,calc(100% - 104px))}
+.integral-redesign #app .section {padding-block:var(--cx-space)}
+.integral-redesign #app h1,.integral-redesign #app h2,.integral-redesign #app h3 {letter-spacing:-.04em;text-wrap:balance}
+.integral-redesign #app p {max-width:65ch}
+.integral-redesign #app .button {background:var(--green);color:var(--ink);border:1px solid var(--green);border-radius:99px;box-shadow:none;min-height:48px;padding:13px 23px;transition:background .2s,transform .2s,border-color .2s}
+.integral-redesign #app .button:hover {background:#ccff58;border-color:#ccff58;transform:translateY(-2px)}
+.integral-redesign #app .button:active {transform:translateY(0)}
+.integral-redesign #app .button.outline {color:inherit;background:transparent;border-color:currentColor}
+.integral-redesign #app .text-link {color:inherit;border-color:#969b9e66}
+.integral-redesign #app :focus-visible {outline:2px solid var(--green);outline-offset:5px}
+.integral-redesign #app .review-bar {background:#16191b;color:#c1c5c7;border-color:#ffffff15}
+.integral-redesign #app .review-bar a {color:var(--green)}
+.integral-redesign #app .header {background:var(--night);border-bottom:1px solid #ffffff20;box-shadow:none}
+.integral-redesign #app .header .brand img {width:218px;height:auto;filter:none}
+.integral-redesign #app .header nav a {color:#fff;font-size:13px}
+.integral-redesign #app .header nav a:hover {color:var(--green)}
+.integral-redesign #app .languages {color:#fff;border-color:#ffffff40}
+.integral-redesign #app .languages a[aria-current=page] {color:var(--green)}
+.integral-redesign #app .mobile-menu {background:var(--night);color:#fff;border-color:#ffffff24;box-shadow:none}
+.integral-redesign #app .menu-toggle {color:#fff}
+.integral-redesign #app .menu-toggle i {background:currentColor}
+/* Photography is a layer beneath the existing scroll engine, never a replacement for it. */
+.integral-redesign #app .hero-scroll {background:var(--night)}
+.integral-redesign #app .hero-pin {background:var(--night);color:#fff}
+.integral-redesign #app .corporate-photo {position:absolute;inset:0;background:linear-gradient(90deg,#090b0d 0%,#090b0d 40%,#090b0de8 55%,#090b0d60 78%,#090b0d36),linear-gradient(180deg,#090b0dce,transparent 75%),url('/assets/corporate-supplied.webp') center right/cover;opacity:.82;pointer-events:none}
+.integral-redesign #app .hero-atmosphere {opacity:.3}
+.integral-redesign #app .hero-atmosphere::before {display:none}
+.integral-redesign #app .ribbon-glow {stroke:var(--green);opacity:.13;stroke-width:12;filter:none}
+.integral-redesign #app .ribbon-edge,.integral-redesign #app .ribbon-secondary {stroke:var(--green);opacity:.3;filter:none}
+.integral-redesign #app .hero-copy {padding-top:9%;position:relative;z-index:2}
+.integral-redesign #app .hero-copy h1 {max-width:570px}
+.integral-redesign #app .hero-copy h1>span {color:var(--green)}
+.integral-redesign #app .hero-copy h1>span::before {display:none}
+.integral-redesign #app .hero-copy>p {color:#e0e2e3;max-width:430px}
+.integral-redesign #app .hero-topline {position:relative;z-index:2;color:var(--green)}
+.integral-redesign #app .hero-topline>span:last-child {color:#c7cbce}
+.integral-redesign #app .hero-engine {top:7%;right:0;width:55%;height:77%;z-index:1}
+.integral-redesign #app .hero-engine::before {background:none}
+.integral-redesign #app .engine-tags>span {background:#090b0de8;color:#fff;border-color:#ffffff50;box-shadow:none}
+.integral-redesign #app .hero-markets {border-color:#ffffff35;color:#d1d5d7}
+.integral-redesign #app .hero-copy .text-link {color:#fff;border-color:#ffffff55}
+.integral-redesign #app .hero-copy .text-link>span {color:#fff}
+.integral-redesign #app .hero-rail {color:#fff;border-color:#ffffff35;z-index:2;position:absolute}
+.integral-redesign #app .hero-caption,.integral-redesign #app .hero-scroll-cue,.integral-redesign #app .hero-scroll-cue>span {color:#e0e3e5}
+.integral-redesign #app .hero-stages button {color:#c7ccce;border-color:#ffffff45}
+.integral-redesign #app .hero-stages button[aria-pressed=true] {color:var(--green);border-color:var(--green)}
+.integral-redesign #app .hero-mobile-summary {background:var(--night);color:#fff}
+.integral-redesign #app .hero-mobile-summary p {color:#d9ddde}
+/* An institutional dark introduction, luminous service chapters and considered editorial contrasts. */
+.integral-redesign #app :is(.manifesto,.intelligence,.work,.why,.final-cta,.footer,.landing-scope) {background:var(--night);color:#fff;--line:#ffffff24;--muted:#bcc1c3;--gray:#b0b5b8}
+.integral-redesign #app :is(.what,.core,.ecosystem,.process,.industries,.faq-section,.landing-value,.landing-case) {background:var(--paper);color:var(--ink);--line:#151a1d29;--muted:#62686c;--gray:#62686c;--art-ink:#182018;--art-line:#a7acaa;--art-surface:#fff}
+.integral-redesign #app :is(.what,.core,.ecosystem,.process,.industries,.faq-section,.landing-value,.landing-case) :is(p,figcaption) {color:#565d61}
+.integral-redesign #app :is(.what,.core,.ecosystem,.process,.industries,.faq-section,.landing-value,.landing-case) .section-line {border-color:var(--cx-border);color:#46573a}
+.integral-redesign #app :is(.what,.core,.ecosystem,.process,.industries,.faq-section,.landing-value,.landing-case) .section-line>span:last-child {color:#61686b}
+.integral-redesign #app :is(.what,.core,.ecosystem,.process,.industries,.faq-section,.landing-value,.landing-case) :focus-visible {outline-color:#344d00}
+.integral-redesign #app :is(.what,.core,.ecosystem,.process,.industries,.faq-section,.landing-value,.landing-case) h2>span {color:var(--ink)}
+.integral-redesign #app .section-line {padding-top:18px;font-size:11px;letter-spacing:.08em}
+.integral-redesign #app .manifesto h2 {max-width:760px}
+.integral-redesign #app .manifesto h2>span {color:var(--green)}
+.integral-redesign #app .manifesto-visual {border-radius:var(--cx-radius);overflow:hidden;border:1px solid #ffffff24;box-shadow:none}
+.integral-redesign #app .manifesto-visual img {filter:grayscale(1)}
+.integral-redesign #app .manifesto-bottom p {color:#c7cccf}
+.integral-redesign #app .what .system-node {border-radius:8px;box-shadow:none;background:var(--cx-light)}
+.integral-redesign #app .what .system-feature {background:var(--green)}
+.integral-redesign #app .core-showcase {display:grid;gap:24px}
+.integral-redesign #app .core-web {border-radius:var(--cx-radius);background:var(--night);color:#fff;border:1px solid #24292c;box-shadow:none;overflow:hidden}
+.integral-redesign #app .core-web p {color:#c3c8cb}
+.integral-redesign #app .core-web .micro {color:var(--green)}
+.integral-redesign #app .core-web .text-link {color:var(--green)}
+.integral-redesign #app .core-web .service-pills span {border-color:#ffffff38;color:#dce0e2}
+.integral-redesign #app .core-pair {gap:24px}
+.integral-redesign #app .core-pair>article {border:1px solid var(--cx-border);border-radius:var(--cx-radius);padding:32px;box-shadow:none;background:var(--cx-light);color:var(--ink)}
+.integral-redesign #app .core-pair>article:nth-child(2) {background:var(--night);color:#fff;border-color:#24292c}
+.integral-redesign #app .core-pair>article:nth-child(2) p {color:#c3c8cb}
+.integral-redesign #app .core-pair>article:nth-child(2) .micro {color:var(--green)}
+.integral-redesign #app .connection-diagram path {stroke:#577f00;filter:none}
+.integral-redesign #app .agent-visual {background:none}
+.integral-redesign #app .agent-note {background:#171d20;color:#fff;border-color:#455044;box-shadow:none}
+.integral-redesign #app .agent-core {box-shadow:none}
+.integral-redesign #app .ecosystem {border-top:1px solid var(--cx-border)}
+.integral-redesign #app .service-ecosystem details {border-color:var(--cx-border);background:none}
+.integral-redesign #app .service-ecosystem details[open] {background:var(--cx-light);border-radius:8px}
+.integral-redesign #app .service-ecosystem summary {color:var(--ink)}
+.integral-redesign #app .service-ecosystem details button {color:#4e575d;min-height:44px}
+.integral-redesign #app .service-ecosystem :is(summary>span,summary>b,button>span) {color:#3c5c00}
+.integral-redesign #app .workflow .flow-node {box-shadow:none;border-radius:12px;background:#161b1f;border-color:#5c6567}
+.integral-redesign #app .workflow button[aria-pressed=true] .flow-node {background:var(--green);color:var(--ink);border-color:var(--green)}
+.integral-redesign #app .workflow button {color:#fff}
+.integral-redesign #app .workflow-explanation {border-color:#ffffff30}
+.integral-redesign #app .workflow-explanation p {color:#bdc3c6}
+.integral-redesign #app .process-tabs>button {background:var(--cx-light);border:1px solid var(--cx-border);box-shadow:none;color:var(--ink);border-radius:8px}
+.integral-redesign #app .process-tabs>button[aria-selected=true] {background:var(--green);border-color:var(--green)}
+.integral-redesign #app .process-panel>span {color:#525d61}
+.integral-redesign #app .portfolio-grid {gap:26px}
+.integral-redesign #app .portfolio-grid>a {background:#111619;border:1px solid #ffffff24;border-radius:var(--cx-radius);overflow:hidden;box-shadow:none;transition:border-color .2s,transform .25s}
+.integral-redesign #app .portfolio-grid>a:hover {border-color:var(--green);transform:translateY(-4px)}
+.integral-redesign #app .project-screen {border:0;border-radius:0;overflow:hidden}
+.integral-redesign #app .project-screen img {filter:grayscale(1);transition:filter .3s;object-position:top}
+.integral-redesign #app .portfolio-grid>a:hover .project-screen img {filter:grayscale(0)}
+.integral-redesign #app .case-caption {padding:23px;gap:12px;align-items:center}
+.integral-redesign #app .project-visit {background:var(--green);color:var(--ink);border-radius:99px;width:38px;height:38px;display:flex;align-items:center;justify-content:center}
+.integral-redesign #app .industry-list>button {background:var(--cx-light);color:var(--ink);border:1px solid var(--cx-border);border-radius:8px;box-shadow:none}
+.integral-redesign #app .industry-list small {color:#62696c}
+.integral-redesign #app .why-grid article {border-color:#ffffff25;background:none;box-shadow:none}
+.integral-redesign #app .why-grid article p {color:#bfc6c9}
+.integral-redesign #app .faq-list>details {background:none;border:0;border-bottom:1px solid var(--cx-border);border-radius:0}
+.integral-redesign #app .faq-list>details[open] {background:var(--cx-light)}
+.integral-redesign #app .faq-list summary b {color:#3b5600}
+/* Service landing pages: white editorial shell with contrasting black scope panels. */
+.integral-redesign.service-view #app .header {background:#fff;border-color:var(--cx-border);color:var(--ink)}
+.integral-redesign.service-view #app .header nav a,.integral-redesign.service-view #app .languages,.integral-redesign.service-view #app .menu-toggle {color:var(--ink)}
+.integral-redesign.service-view #app .languages {border-color:#151a1d40}
+.integral-redesign.service-view #app .languages a[aria-current=page] {color:#2c4500;border-color:#537400}
+.integral-redesign.service-view #app .landing-hero {background:#fff;color:var(--ink);padding-top:32px;padding-bottom:64px}
+.integral-redesign.service-view #main {background:#fff}
+.integral-redesign #app .landing-hero h1>span {color:var(--ink);text-decoration:underline;text-decoration-color:var(--green);text-decoration-thickness:7px;text-underline-offset:8px}
+.integral-redesign #app .landing-hero-grid {gap:6%;padding-block:30px}
+.integral-redesign #app .landing-hero p {color:#565d61}
+.integral-redesign #app .landing-hero .eyebrow {color:#3b5700}
+.integral-redesign #app .breadcrumb {color:#62696b}
+.integral-redesign #app .breadcrumb a {color:#45513d}
+.integral-redesign #app .landing-art {border-radius:var(--cx-radius)}
+.integral-redesign #app .landing-fit {border-color:var(--cx-border)}
+.integral-redesign #app .landing-fit :is(span,button) {color:#344e00}
+.integral-redesign #app .landing-proof {color:#4f585c}
+.integral-redesign #app .value-strips {gap:20px}
+.integral-redesign #app .value-strips>article {background:var(--cx-light);border:1px solid var(--cx-border);border-radius:var(--cx-radius);padding:28px}
+.integral-redesign #app .value-strips>article:nth-child(2) {background:var(--night);color:#fff;border-color:var(--night)}
+.integral-redesign #app .value-strips>article:nth-child(2) p {color:#c3c9cc}
+.integral-redesign #app .value-strips>article>span {color:#537300}
+.integral-redesign #app .value-strips>article:nth-child(2)>span {color:var(--green)}
+.integral-redesign #app .landing-scope .scope-row {border-color:#ffffff30;color:#e5e7e8}
+.integral-redesign #app .landing-scope :is(.scope-row span,.scope-row b) {color:var(--green)}
+.integral-redesign #app .wide-case {border-radius:var(--cx-radius);overflow:hidden;border:1px solid var(--cx-border)}
+/* The existing demo form is also presented inline, with explicit no-send feedback. */
+.integral-redesign #app .final-cta {position:relative;overflow:hidden}
+.integral-redesign #app .final-cta::before {content:'';position:absolute;inset:0;background:linear-gradient(90deg,#090b0d,#090b0de0 62%,#090b0d70),url('/assets/corporate-supplied.webp') right center/cover;pointer-events:none}
+.integral-redesign #app .integral-contact-layout {display:grid;grid-template-columns:1fr 1fr;gap:8%;position:relative;align-items:center}
+.integral-redesign #app .integral-contact-copy {min-width:0;position:relative}
+.integral-redesign #app .final-cta h2 {font-size:clamp(32px,3.2vw,46px);max-width:530px;width:100%;margin-top:25px}
+.integral-redesign #app .final-cta h2>span {color:var(--green)}
+.integral-redesign #app .cta-symbol {position:relative;width:100px;height:auto;inset:auto;margin-block:26px;opacity:1;transform:none}
+.integral-redesign #app .cta-bottom {display:block;padding:0;border:0;margin:0}
+.integral-redesign #app .cta-bottom p {color:#ccd0d2;margin-bottom:24px}
+.integral-redesign #app .cta-bottom .actions {flex-wrap:wrap;gap:12px}
+.integral-redesign #app .integral-contact-details {display:grid;gap:15px;margin-top:34px;font-size:14px}
+.integral-redesign #app .integral-contact-details a {color:#fff;justify-self:start;border-bottom:1px solid #ffffff30;padding-bottom:3px}
+.integral-redesign #app .integral-contact-details span {color:#b4bbc0;font-size:11px;letter-spacing:.08em}
+.integral-redesign #app .integral-contact-card {background:#fff;color:var(--ink);border:1px solid var(--cx-border);border-radius:var(--cx-radius);padding:32px;box-shadow:none;min-width:0}
+.integral-redesign #app .integral-contact-card h3 {font-size:23px;margin:0 0 26px}
+.integral-redesign #app .integral-contact-card :focus-visible {outline-color:#3f5b00}
+.integral-redesign #app .inline-design-form {margin:0}
+.integral-redesign #app :is(.integral-contact-card,#proposal-dialog) :is(input,select,textarea) {background:#f7f8f8;color:var(--ink);border:1px solid #d9dddf;border-radius:7px;box-shadow:none;min-width:0;padding:12px;width:100%}
+.integral-redesign #app :is(.integral-contact-card,#proposal-dialog) input[type=checkbox] {width:18px;height:18px;flex:none;accent-color:#537700}
+.integral-redesign #app .integral-contact-card label {color:#414a50}
+.integral-redesign #app .integral-contact-card textarea {min-height:110px;resize:vertical}
+.integral-redesign #app .integral-contact-card .form-row {gap:16px}
+.integral-redesign #app .integral-contact-card .button {width:100%;justify-content:space-between}
+.integral-redesign #app .integral-contact-card .preview-form-note {font-size:11px;line-height:1.6;color:#60696e}
+.integral-redesign #app .integral-contact-card .form-status {font-size:14px;background:#edf7db;color:#263b00;border-radius:6px;padding:12px}
+.integral-redesign #app #proposal-dialog {background:#fff;color:var(--ink);border:1px solid var(--cx-border);border-radius:var(--cx-radius);box-shadow:0 18px 70px #0004}
+.integral-redesign #app #proposal-dialog::backdrop {background:#0009;backdrop-filter:blur(4px)}
+.integral-redesign #app .footer {border-top:1px solid #ffffff24}
+.integral-redesign #app .footer a {color:#d5dade}
+.integral-redesign #app .footer a:hover {color:var(--green)}
+.integral-redesign #app .footer-top p {color:#c3c9cd}
+.integral-redesign #app .footer-bottom {color:#afb7bc;border-color:#ffffff24}
+.integral-redesign #app .whatsapp {background:var(--green);color:var(--ink);box-shadow:none;border-color:var(--green)}
+/* Editorial tools, storyboard and both interactive chapters retain their own geometry and controls. */
+.integral-redesign #app :is(.system-page,.review-page,.storyboard-page) {background:var(--night);color:#fff}
+.integral-redesign #app :is(.review-links>a,.system-guidelines>article,.storyboard-grid>figure) {border-color:#ffffff2e;box-shadow:none;border-radius:var(--cx-radius)}
+.integral-redesign #app .review-links>a:hover {background:#181d20}
+.integral-redesign #app .system-controls {background:#141a1e;border-radius:var(--cx-radius);border-color:#ffffff28}
+.integral-redesign #app :is(.anatomy-intro,.anatomy-machine-section,.anatomy-foundations,.anatomy-selected,.agent-hero,.agent-machine-section,.agent-capabilities,.agent-comparison,.agent-sectors) {background:#fff;--anatomy-panel:#f2f3f3;--anatomy-bg:#fff}
+.integral-redesign #app :is(.anatomy-outcomes,.anatomy-measurement) {background:var(--night)}
+.integral-redesign #app :is(.anatomy-intro,.agent-hero) h1>span {color:#1b262b;text-decoration:underline;text-decoration-color:var(--green);text-decoration-thickness:5px;text-underline-offset:6px}
+.integral-redesign #app .agent-context {scrollbar-color:#90999d transparent}
+@media (min-width:1441px) {.integral-redesign #app .hero-copy {padding-top:10%}}
+@media (max-width:1100px) {
+ .integral-redesign #app .wrap {width:calc(100% - 64px)}
+ .integral-redesign #app .header .brand img {width:180px}
+ .integral-redesign #app .header nav {gap:18px}
+ .integral-redesign #app .header nav a {font-size:12px}
+ .integral-redesign #app .hero-copy h1 {max-width:490px}
+ .integral-redesign #app .hero-engine {width:57%}
+ .integral-redesign #app .integral-contact-layout {gap:5%}
+ .integral-redesign #app .integral-contact-card {padding:26px}
+}
+@media (max-width:800px) {
+ :root {--type-display:clamp(36px,6vw,48px);--type-section:clamp(29px,5vw,38px);--type-card:24px;--cx-space:64px}
+ .integral-redesign #app .wrap {width:calc(100% - 40px)}
+ .integral-redesign #app .header .brand img {width:185px}
+ .integral-redesign #app .hero-scroll .hero-topline {font-size:10px}
+ .integral-redesign #app .hero-scroll .hero-engine {position:relative;inset:auto;width:100%;height:0;min-height:150px;flex:1;margin:0;z-index:1}
+ .integral-redesign #app .hero-scroll .hero-copy {padding:0;flex:none}
+ .integral-redesign #app .hero-copy h1 {max-width:530px}
+ .integral-redesign #app .hero-scroll .hero-rail {position:relative;bottom:auto;margin-top:16px}
+ .integral-redesign #app .hero-scroll .hero-copy .text-link>span {color:inherit}
+ .integral-redesign #app .corporate-photo {background-position:65% center;opacity:.6}
+ .integral-redesign #app .core-pair>article {padding:27px}
+ .integral-redesign #app .core-web {padding:28px}
+ .integral-redesign #app .section-heading {gap:24px}
+ .integral-redesign #app .integral-contact-layout {grid-template-columns:1fr;gap:40px}
+ .integral-redesign #app .integral-contact-copy {max-width:600px}
+ .integral-redesign #app .integral-contact-card {padding:28px}
+ .integral-redesign #app .integral-contact-card .form-row {grid-template-columns:1fr 1fr}
+ .integral-redesign #app .cta-symbol {width:75px;margin-block:22px}
+ .integral-redesign #app .value-strips>article {padding:24px}
+ .integral-redesign #app .case-caption {padding:20px}
+}
+@media (max-width:420px) {
+ .integral-redesign #app .wrap {width:calc(100% - 36px)}
+ .integral-redesign #app .header .brand img {width:160px}
+ .integral-redesign #app .hero-scroll .hero-copy .button {padding:12px 14px;gap:10px}
+ .integral-redesign #app .hero-scroll .hero-copy .text-link {gap:8px;font-size:12px}
+ .integral-redesign #app .hero-scroll .hero-copy .actions {gap:12px}
+ .integral-redesign #app .integral-contact-card {padding:23px 20px}
+ .integral-redesign #app .integral-contact-card .form-row {grid-template-columns:1fr}
+ .integral-redesign #app .integral-contact-card h3 {font-size:22px}
+ .integral-redesign #app .hero-copy h1 {font-size:36px;line-height:1.09}
+ .integral-redesign #app .hero-topline>span:last-child {display:none}
+}
+@media (prefers-reduced-motion:reduce) {
+ .integral-redesign #app .button,.integral-redesign #app .portfolio-grid>a {transition:none;transform:none}
+ .integral-redesign #app .hero-scroll .hero-pin {height:auto;min-height:650px!important}
+ .integral-redesign #app .hero-scroll .hero-engine {height:280px;flex:none}
+ .integral-redesign #app .hero-scroll .hero-copy {padding-bottom:30px}
+}
+.integral-redesign #app .final-cta h2 {text-wrap:pretty}
+.integral-redesign #app .final-cta h2>span {display:block;width:auto;max-width:none;text-wrap:pretty}
+.integral-redesign #app .final-cta::before {background:linear-gradient(90deg,#090b0d 0%,#090b0d 45%,#090b0de8 62%,#090b0d70),url('/assets/corporate-supplied.webp') right center/cover}
+.integral-redesign #app .process-tabs>button>span {color:#3b5300}
+.integral-redesign #app .process-tabs>button[aria-selected=true]>span {color:#172400}
+@media (max-width:800px) {
+ .integral-redesign #app .corporate-photo {background-position:right center}
+ .integral-redesign #app .hero-engine .engine-poster {top:50%;transform:translateY(-50%)}
+}
