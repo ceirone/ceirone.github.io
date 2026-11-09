@@ -115,3 +115,5 @@ if(page==='how-ai-agents-work')import('/assets/ai-operations-runtime.js').then(m
 document.querySelectorAll('.inline-design-form').forEach(inline=>inline.addEventListener('submit',e=>{e.preventDefault();sendWhatsApp(inline,false);}));
 
 document.querySelectorAll('svg[role=img]:not([aria-label]):not([aria-labelledby])').forEach(svg=>svg.setAttribute('aria-label',svg.closest('figure')?.getAttribute('aria-label')||t('Connected business systems','Sistemas de negocio conectados')));
+
+import('/premium.js').catch(()=>{});

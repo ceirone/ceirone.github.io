@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-09T20:52:30.672Z",
+  "builtAt": "2026-11-09T23:09:34.930Z",
   "kind": "static-design-preview",
   "routes": "EN/ES, SPA fallback to index.html",
   "forms": "Demonstration only; no send or persistence",
@@ -15,6 +15,8 @@
     "editorial.css",
     "index.html",
     "integral-design.css",
+    "premium.css",
+    "premium.js",
     "style.css",
     "visual-system.min.css"
   ]

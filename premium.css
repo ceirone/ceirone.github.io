@@ -1,0 +1,92 @@
+/* ===== PREMIUM LAYER — unified dark, aurora, glass bento, kinetic type ===== */
+:root{--p-bg:#050607;--p-bg2:#0a0d0e;--p-line:rgba(255,255,255,.09);--p-glass:rgba(255,255,255,.035);--p-text:#f2f5f1;--p-mute:#9aa4a0;--p-lime:#c4ff2e;--p-ease:cubic-bezier(.16,1,.3,1)}
+html{scroll-behavior:smooth}
+body{background:var(--p-bg)!important}
+.integral-redesign #app{background:var(--p-bg);color:var(--p-text);overflow-x:clip}
+/* film grain + aurora (fixed, cheap) */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:2;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+body::after{content:"";position:fixed;inset:-20%;pointer-events:none;z-index:0;background:radial-gradient(40% 35% at calc(var(--mx,70)*1%) calc(var(--my,20)*1%),rgba(196,255,46,.09),transparent 70%),radial-gradient(35% 30% at 10% 90%,rgba(40,120,90,.12),transparent 70%);transition:background .3s}
+.integral-redesign #app>*{position:relative;z-index:1}
+/* scroll progress */
+.p-progress{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,transparent,var(--p-lime));z-index:60}
+/* ---- all sections go dark ---- */
+.integral-redesign #app .section,.integral-redesign #app .section.what,.integral-redesign #app .section.intelligence,.integral-redesign #app .section.process,.integral-redesign #app .section.industries,.integral-redesign #app .section.faq-section,.integral-redesign #app .section.ecosystem,.integral-redesign #app .section.landing-case,.integral-redesign #app .section.landing-scope,.integral-redesign #app .section.landing-value,.integral-redesign #app .section.core,.integral-redesign #app .section.work,.integral-redesign #app .section.why,.integral-redesign #app .manifesto{background:transparent!important;color:var(--p-text)!important;padding-block:clamp(88px,11vw,170px)}
+.integral-redesign #app .section :is(h1,h2,h3,h4,strong,b,dt){color:var(--p-text)!important}
+.integral-redesign #app .section :is(p,li,dd,small,figcaption){color:var(--p-mute)!important}
+.integral-redesign #app .section .micro,.integral-redesign #app .section-line span:first-child{color:var(--p-lime)!important}
+.integral-redesign #app .section-line{border-color:var(--p-line)!important;margin-bottom:clamp(40px,6vw,90px)}
+/* display typography */
+.integral-redesign #app .section h2{font-size:clamp(40px,6.4vw,104px)!important;line-height:.98!important;letter-spacing:-.045em!important;font-weight:700;max-width:16ch;text-wrap:balance}
+.integral-redesign #app .section h2 span,.integral-redesign #app .manifesto h2 span{background:linear-gradient(100deg,#c4ff2e 10%,#7dffb0 70%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent!important}
+.integral-redesign #app .section-heading{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(24px,5vw,80px);align-items:end}
+.integral-redesign #app .section-heading p{font-size:clamp(16px,1.3vw,20px);line-height:1.6;max-width:44ch}
+@media(max-width:860px){.integral-redesign #app .section-heading{grid-template-columns:1fr}}
+/* ---- glass bento cards ---- */
+.integral-redesign #app :is(.service-card,.core-card,.card,.value-card,.scope-card,.why-card,.faq-item,.industry-list>button,.process-tabs>button,.ecosystem-card,.flow-card,.proof-card,article.case,.core article,.core-grid>*,.why-grid>*,.value-grid>*,.scope-grid>*){background:var(--p-glass)!important;border:1px solid var(--p-line)!important;border-radius:28px!important;color:var(--p-text)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 30px 60px -30px rgba(0,0,0,.8)!important;position:relative;overflow:hidden;transition:transform .6s var(--p-ease),border-color .4s,background .4s}
+.integral-redesign #app :is(.service-card,.core-card,.card,.value-card,.scope-card,.why-card,.core article,.core-grid>*,.why-grid>*,.value-grid>*,.scope-grid>*):hover{transform:translateY(-6px);border-color:rgba(196,255,46,.4)!important}
+.integral-redesign #app :is(.core article,.core-grid>*,.why-grid>*,.value-grid>*,.scope-grid>*)::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(420px circle at var(--cx,50%) var(--cy,0%),rgba(196,255,46,.13),transparent 60%);opacity:0;transition:opacity .4s}
+.integral-redesign #app :is(.core article,.core-grid>*,.why-grid>*,.value-grid>*,.scope-grid>*):hover::after{opacity:1}
+.integral-redesign #app .core article:nth-child(n),.integral-redesign #app .core article *{background-color:transparent}
+.integral-redesign #app .core :is(h3,h4){color:var(--p-text)!important}
+.integral-redesign #app .core :is(p,li,span){color:var(--p-mute)!important}
+/* buttons */
+.integral-redesign #app .button,.integral-redesign #app a.button{background:var(--p-lime)!important;color:#050607!important;border:0!important;border-radius:999px!important;font-weight:600;box-shadow:0 0 0 1px rgba(196,255,46,.5),0 10px 40px -8px rgba(196,255,46,.45)!important;transition:transform .5s var(--p-ease),box-shadow .4s!important}
+.integral-redesign #app .button:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 0 0 1px rgba(196,255,46,.8),0 18px 60px -8px rgba(196,255,46,.65)!important}
+.integral-redesign #app .button:active{transform:scale(.97)}
+.integral-redesign #app :is(.button.secondary,.button.ghost,.button.outline,.button-secondary,.text-link){background:transparent!important;color:var(--p-text)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)!important}
+/* header = floating glass pill */
+.integral-redesign #app .header{position:fixed!important;top:14px!important;left:50%;transform:translateX(-50%);width:min(1180px,calc(100% - 28px));border-radius:999px;border:1px solid var(--p-line);background:rgba(10,12,13,.55)!important;-webkit-backdrop-filter:blur(22px) saturate(1.4);backdrop-filter:blur(22px) saturate(1.4);padding-inline:22px;z-index:50;box-shadow:0 20px 60px -20px rgba(0,0,0,.7)}
+.integral-redesign #app .review-bar{display:none!important}
+/* hero */
+.integral-redesign #app .hero-scroll h1{font-size:clamp(52px,9.2vw,160px)!important;line-height:.92!important;letter-spacing:-.055em!important;text-wrap:balance}
+.integral-redesign #app .hero-scroll h1 span{background:linear-gradient(100deg,#c4ff2e,#6dffb8 60%,#c4ff2e);background-size:200% 100%;animation:p-shine 7s linear infinite;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+@keyframes p-shine{to{background-position:-200% 0}}
+/* manifesto image: soft glow frame */
+.integral-redesign #app .manifesto-visual{border-radius:32px;overflow:hidden;border:1px solid var(--p-line);box-shadow:0 0 120px -30px rgba(196,255,46,.25)}
+.integral-redesign #app .manifesto-visual img{filter:none!important;transition:transform 1.4s var(--p-ease)}
+.integral-redesign #app .manifesto-visual:hover img{transform:scale(1.04)}
+/* portfolio */
+.integral-redesign #app .portfolio-grid article{border-radius:28px!important;border:1px solid var(--p-line);background:var(--p-glass);overflow:hidden;transition:transform .6s var(--p-ease),border-color .4s}
+.integral-redesign #app .portfolio-grid article:hover{transform:translateY(-8px);border-color:rgba(196,255,46,.45)}
+/* faq */
+.integral-redesign #app .faq-section :is(button,summary){color:var(--p-text)!important;background:transparent!important;border-color:var(--p-line)!important}
+/* process / industry lists */
+.integral-redesign #app .process-tabs>button[aria-selected=true],.integral-redesign #app .industry-list>button:hover{background:var(--p-lime)!important;color:#050607!important;border-color:var(--p-lime)!important}
+.integral-redesign #app .process-tabs>button[aria-selected=true] *{color:#050607!important}
+/* form card keeps readable light */
+.integral-redesign #app .final-cta{background:transparent!important}
+/* marquee */
+.p-marquee{overflow:hidden;border-block:1px solid var(--p-line);padding:26px 0;position:relative;z-index:1;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.p-marquee div{display:flex;gap:56px;width:max-content;animation:p-scroll 38s linear infinite}
+.p-marquee span{font-size:clamp(28px,4vw,56px);font-weight:700;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.28);white-space:nowrap}
+.p-marquee span:nth-child(even){color:var(--p-lime);-webkit-text-stroke:0}
+@keyframes p-scroll{to{transform:translateX(-50%)}}
+/* reveal */
+.p-rev{opacity:0;transform:translateY(48px) scale(.985);filter:blur(10px);transition:opacity 1s var(--p-ease),transform 1s var(--p-ease),filter 1s var(--p-ease);transition-delay:var(--d,0s)}
+.p-rev.in{opacity:1;transform:none;filter:none}
+@media(prefers-reduced-motion:reduce){.p-rev{opacity:1;transform:none;filter:none;transition:none}.p-marquee div,.hero-scroll h1 span{animation:none}html{scroll-behavior:auto}}
+@media(max-width:700px){.integral-redesign #app .header{top:8px!important}.integral-redesign #app .section h2{font-size:clamp(36px,11vw,56px)!important}}
+.integral-redesign #app .section h2{max-width:20ch;font-size:clamp(38px,5.6vw,92px)!important}
+.integral-redesign #app .section details,.integral-redesign #app .system-node{background:var(--p-glass)!important;border:1px solid var(--p-line)!important;border-radius:20px!important;color:var(--p-text)!important;box-shadow:none!important}
+.integral-redesign #app .section details *,.integral-redesign #app .system-node *{color:var(--p-text)!important}
+.integral-redesign #app .section details p,.integral-redesign #app .section details li{color:var(--p-mute)!important}
+.integral-redesign #app .section summary{color:var(--p-text)!important}
+html,html body,body.service-view,body.integral-redesign{background:#050607!important;color-scheme:dark}
+.integral-redesign #app main,.integral-redesign #app main>section,.integral-redesign #app main>div,.integral-redesign #app .landing-hero,.integral-redesign #app [class*=page] :is(section,header){background:transparent!important;color:var(--p-text)}
+.integral-redesign #app main :is(h1,h2,h3,h4,strong,th){color:var(--p-text)!important}
+.integral-redesign #app main :is(p,li,td,dd,small,figcaption,label,span){color:var(--p-mute)}
+.integral-redesign #app main a:not(.button){color:var(--p-text)}
+.integral-redesign #app main :is(article,aside:not(.integral-contact-card),.panel,.card,.stage,figure>div){background:var(--p-glass)!important;border:1px solid var(--p-line)!important;border-radius:24px!important;color:var(--p-text)!important}
+.integral-redesign #app main :is(table,tr,th,td){border-color:var(--p-line)!important;background:transparent!important}
+.integral-redesign #app .landing-hero h1{font-size:clamp(46px,7vw,120px)!important;line-height:.95;letter-spacing:-.05em;text-wrap:balance;margin-bottom:.3em}
+.integral-redesign #app .landing-hero h1 span,.integral-redesign #app .landing-hero h1 em{background:linear-gradient(100deg,#c4ff2e,#6dffb8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none!important}
+.integral-redesign #app .landing-hero{padding-top:clamp(120px,14vw,200px)}
+.integral-redesign #app main :is(input,select,textarea){background:#0e1213!important;color:var(--p-text)!important;border:1px solid var(--p-line)!important;border-radius:14px}
+.integral-redesign #app .integral-contact-card{background:rgba(255,255,255,.05)!important;border:1px solid var(--p-line)!important;border-radius:28px!important;-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
+.integral-redesign #app .integral-contact-card :is(h2,h3,label,strong){color:var(--p-text)!important}
+.integral-redesign #app .integral-contact-card :is(p,small,span,.consent){color:var(--p-mute)!important}
+.integral-redesign #app main h1 :is(span,em,mark){background:linear-gradient(100deg,#c4ff2e,#6dffb8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent!important;text-decoration:none!important}
+.integral-redesign #app main :is([aria-selected=true],.active,.is-active)>*{color:#050607!important}
+.integral-redesign #app main [aria-selected=true]{background:var(--p-lime)!important;color:#050607!important}
+.integral-redesign #app :is(.button,a.button):not(.secondary):not(.ghost):not(.outline):not(.button-secondary) *,.integral-redesign #app :is(.button,a.button):not(.secondary):not(.ghost):not(.outline):not(.button-secondary){color:#050607!important}
+.integral-redesign #app .hero-scroll :is(p,span,small){color:#dfe5e1}

@@ -1,0 +1,10 @@
+const app=()=>document.getElementById('app');
+const bar=document.createElement('div');bar.className='p-progress';document.body.appendChild(bar);
+addEventListener('scroll',()=>{const h=document.documentElement;bar.style.transform=`scaleX(${scrollY/Math.max(1,h.scrollHeight-innerHeight)})`},{passive:true});
+addEventListener('pointermove',e=>{const s=document.body.style;s.setProperty('--mx',(e.clientX/innerWidth*100).toFixed(1));s.setProperty('--my',(e.clientY/innerHeight*100).toFixed(1))},{passive:true});
+document.addEventListener('pointermove',e=>{const c=e.target.closest&&e.target.closest('.core article,.core-grid>*,.why-grid>*,.value-grid>*,.scope-grid>*');if(!c)return;const r=c.getBoundingClientRect();c.style.setProperty('--cx',(e.clientX-r.left)+'px');c.style.setProperty('--cy',(e.clientY-r.top)+'px')},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+const SEL='.section-line,.section h2,.section-heading p,.manifesto-visual,.manifesto-bottom,.core article,.portfolio-grid article,.faq-item,.industry-list>*,.process-tabs,.process-panel,.landing-value article,.landing-scope article,.why article,.ecosystem>.wrap>*,.final-cta .wrap>*';
+function prep(){const r=app();if(!r)return;let n=0;r.querySelectorAll(SEL).forEach(el=>{if(el.dataset.pr)return;el.dataset.pr=1;el.classList.add('p-rev');el.style.setProperty('--d',(n++%4)*.08+'s');io.observe(el)});
+ if(!r.querySelector('.p-marquee')&&r.querySelector('#about')){const es=document.documentElement.lang==='es',w=es?['Sitios web','Agentes de IA','Automatización','Marca','CRM','Crecimiento','Conexión']:['Websites','AI agents','Automation','Brand','CRM','Growth','Connection'];const m=document.createElement('div');m.className='p-marquee';m.setAttribute('aria-hidden','true');const row=w.concat(w).map(x=>`<span>${x}</span>`).join('');m.innerHTML=`<div>${row}${row}</div>`;r.querySelector('#about').before(m)}}
+new MutationObserver(()=>requestAnimationFrame(prep)).observe(document.body,{childList:true,subtree:true});prep();
