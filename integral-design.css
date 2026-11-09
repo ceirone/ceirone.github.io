@@ -106,7 +106,7 @@ body.integral-redesign {background:var(--night);color:#fff;-webkit-font-smoothin
 .integral-redesign #app .portfolio-grid>a:hover {border-color:var(--green);transform:translateY(-4px)}
 .integral-redesign #app .project-screen {border:0;border-radius:0;overflow:hidden}
 .integral-redesign #app .project-screen img {filter:grayscale(1);transition:filter .3s;object-position:top}
-.integral-redesign #app .portfolio-grid>a:hover .project-screen img {filter:grayscale(0)}
+.integral-redesign #app .portfolio-grid .project-screen:hover img,.integral-redesign #app .portfolio-grid article:hover .project-screen img,.integral-redesign #app .portfolio-grid a:hover img {filter:grayscale(0)!important}
 .integral-redesign #app .case-caption {padding:23px;gap:12px;align-items:center}
 .integral-redesign #app .project-visit {background:var(--green);color:var(--ink);border-radius:99px;width:38px;height:38px;display:flex;align-items:center;justify-content:center}
 .integral-redesign #app .industry-list>button {background:var(--cx-light);color:var(--ink);border:1px solid var(--cx-border);border-radius:8px;box-shadow:none}
