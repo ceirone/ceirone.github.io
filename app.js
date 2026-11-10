@@ -1,4 +1,4 @@
-const path=location.pathname.split('/').filter(Boolean);const lang=path[0]==='es'?'es':'en';const es=lang==='es';const page=path.slice(1).join('/')||'home';
+const path=location.pathname.split('/').filter(Boolean);const lang=path[0]==='es'?'es':'en';const es=lang==='es';let page=path.slice(1).join('/')||'home';page=page.replace(/^(services\/)+/,'');if(['one-page-websites','business-websites','e-commerce'].includes(page))page='services/'+page;
 const anatomyPage=page==='how-websites-connect'?(await import('/anatomy-page.js')).anatomyPage:null;
 const aiAgentsPage=page==='how-ai-agents-work'?(await import('/ai-agents-page.js')).aiAgentsPage:null;
 const chapterStyles=page==='how-websites-connect'?['/vendor/anatomy/iso.css','/anatomy-page.css']:page==='how-ai-agents-work'?['/vendor/anatomy/iso.css','/ai-operations.css']:[];await Promise.all(chapterStyles.map(href=>new Promise((resolve,reject)=>{const css=document.createElement('link');css.rel='stylesheet';css.href=href;css.onload=resolve;css.onerror=()=>reject(new Error('Stylesheet unavailable: '+href));document.head.append(css);})));
