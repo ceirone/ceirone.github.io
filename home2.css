@@ -275,3 +275,10 @@ html body #app .faq-grid>div:first-child>:last-child:not(a):not(button):not(p):n
 .sl-hero .h2-lead{font-size:clamp(16px,1.25vw,19px)!important;line-height:1.6!important;margin:0 0 28px!important}
 .sl-sec{padding:clamp(56px,7vw,104px) 0}
 .sl-laptop{max-width:640px;margin-left:auto}
+.sl-note2{display:block;font-style:normal;color:var(--p-mute);font-size:14px;line-height:1.5;margin:4px 0 6px}
+.sl-pricebox{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid rgba(196,255,46,.3);border-radius:28px;overflow:hidden;background:rgba(196,255,46,.2)}
+.sl-pricebox>div{background:#080b0a;padding:34px 30px;display:grid;gap:8px}
+.sl-pricebox small{font:700 11px/1 ui-monospace,monospace;letter-spacing:.16em;color:var(--p-mute)}
+.sl-pricebox b{font-size:clamp(30px,3.6vw,56px);letter-spacing:-.04em;line-height:1;background:linear-gradient(100deg,#c4ff2e,#6dffb8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sl-pricebox span{color:var(--p-mute);font-size:14px}
+@media(max-width:900px){.sl-pricebox{grid-template-columns:1fr}}
